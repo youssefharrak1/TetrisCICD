@@ -7,7 +7,13 @@ pipeline {
     }
 
     stages {
-        
+        stage('Checkout') {
+            steps {
+                // Use scmGit to checkout the code
+                checkout scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[credentialsId: 'tetris_token', url: 'https://github.com/youssefharrak1/TetrisCICD.git']])
+            }
+        }
+
         stage('Build Docker Image') {
             steps {
                 script {
