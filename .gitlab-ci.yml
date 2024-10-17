@@ -14,7 +14,6 @@ build:
   script:
     - docker build -t my-image:latest .
     - docker run my-image:latest
-    - mkdir -p output
   tags:
     - dosi
 
